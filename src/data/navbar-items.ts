@@ -1,4 +1,6 @@
-export const NAVBAR_ITEMS = [
+import { NavbarItem } from '@/types/types'
+
+export const NAVBAR_ITEMS: NavbarItem[] = [
   {
     label: 'Projects',
     href: '/projects'
