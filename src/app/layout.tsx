@@ -19,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <head />
+      <head>
+        <link
+          rel='icon'
+          // type='image/png'
+          sizes='any'
+          href='/favicon-light.png'
+        />
+      </head>
       <body
         className={cn(
           'font-inter flex min-h-screen flex-col antialiased',
