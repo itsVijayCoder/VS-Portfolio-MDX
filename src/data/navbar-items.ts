@@ -6,6 +6,10 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     href: '/projects'
   },
   {
+    label: 'Notes',
+    href: '/notes'
+  },
+  {
     label: 'About',
     href: '/about'
   },

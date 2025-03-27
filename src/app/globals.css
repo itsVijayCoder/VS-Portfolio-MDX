@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@plugin '@tailwindcss/typography';
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -46,6 +48,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --header-height: 4rem;
 }
 
 :root {
@@ -82,6 +85,16 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  --sh-identifier: #b1cdee;
+  --sh-keyword: #f47067;
+  --sh-string: #00a99a;
+  --sh-class: #8d85ff;
+  --sh-property: #4e8fdf;
+  --sh-entity: #6eafad;
+  --sh-jsxliterals: #bf7db6;
+  --sh-sign: #8996a3;
+  --sh-comment: #a19595;
 }
 
 .dark {
@@ -118,6 +131,11 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+
+  --sh-class: #4c97f8;
+  --sh-identifier: white;
+  --sh-keyword: #f47067;
+  --sh-string: #0fa295;
 }
 
 @layer base {
@@ -140,6 +158,14 @@
     font-family: var(--font-inter);
   }
 
+  .nav-hover-btn {
+    @apply font-poppins text-muted-foreground hover:text-foreground after:bg-primary-blue relative cursor-pointer text-sm font-semibold uppercase transition-colors duration-300 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:h-0.5 hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+
+  .nav-hover-btn-1 {
+    @apply relative ms-10 cursor-pointer text-sm font-semibold uppercase after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white;
+  }
+
   .title {
     @apply decoration-border/75 font-playfair text-3xl font-bold underline decoration-2 underline-offset-8;
   }
@@ -149,12 +175,11 @@
   }
 
   .prose code {
-    @apply rounded-lg px-1 py-0.5;
+    @apply rounded-lg px-10 py-0.5;
   }
 
   .prose pre code {
-    @apply p-0;
-    line-height: 1.75;
+    @apply p-0 leading-3;
   }
 
   .prose code span {

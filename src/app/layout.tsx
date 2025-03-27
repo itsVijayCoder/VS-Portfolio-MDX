@@ -6,6 +6,7 @@ import Footer from '@/sections/Footer'
 import { cn } from '@/lib/utils'
 import { calistoga, inter, playfair, poppins } from '@/utils/fonts'
 import Providers from '@/components/Providers'
+import Container from '@/components/layout/container'
 
 export const metadata: Metadata = {
   title: 'VS Portfolio',
@@ -19,14 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <head>
-        <link
-          rel='icon'
-          // type='image/png'
-          sizes='any'
-          href='/favicon-light.png'
-        />
-      </head>
+      <head />
       <body
         className={cn(
           'font-inter flex min-h-screen flex-col antialiased',
@@ -38,7 +32,9 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className='grow'>{children}</main>
+          <main className='mt-16 grow'>
+            <Container>{children}</Container>
+          </main>
           <Footer />
         </Providers>
       </body>

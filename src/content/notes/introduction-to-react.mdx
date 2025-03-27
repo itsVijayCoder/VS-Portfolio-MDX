@@ -1,0 +1,144 @@
+---
+title: Introduction to React
+description:
+  Learn the fundamentals of React, a popular JavaScript library for building
+  user interfaces.
+date: 2023-11-15
+author: Your Name
+image: /images/notes/introduction-to-mdx.webp
+tags: ['react', 'javascript', 'frontend']
+---
+
+# Introduction to React
+
+React is a declarative, efficient, and flexible JavaScript library for building
+user interfaces. Developed by Facebook, React has become one of the most popular
+frontend libraries in web development.
+
+## Why Use React?
+
+Here are some key benefits of React:
+
+- **Component-Based Architecture**: Build encapsulated components that manage
+  their own state
+- **Virtual DOM**: Efficient updates and rendering
+- **Declarative Syntax**: Makes code more predictable and easier to debug
+- **Rich Ecosystem**: Large community and many supporting libraries
+- **Learn Once, Write Anywhere**: Can be used for web, mobile (React Native),
+  and more
+
+## Basic React Concepts
+
+### 1. Components
+
+React applications are made of components. A component is a self-contained piece
+of UI.
+
+```jsx
+// Simple functional component
+function Greeting() {
+  return <h1>Hello, React!</h1>
+}
+```
+
+### 2. JSX
+
+JSX is a syntax extension that allows you to write HTML-like code in your
+JavaScript.
+
+```jsx
+const element = <h1 className='title'>Hello, world!</h1>
+```
+
+### 3. Props
+
+Props (short for properties) are how components receive data from their parent
+components.
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>
+}
+
+// Usage
+;<Welcome name='Sarah' />
+```
+
+### 4. State
+
+State allows components to manage and track changes to their data.
+
+```jsx
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+```
+
+## Setting Up a React Project
+
+The easiest way to start a new React project is using Create React App:
+
+```bash
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+## Your First React Component
+
+Let's create a simple component that displays a list of items:
+
+```jsx
+function ItemList() {
+  const items = ['React', 'JSX', 'Components', 'State']
+
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  )
+}
+```
+
+## React Ecosystem
+
+React works well with many other libraries:
+
+- **State Management**: Redux, MobX, Context API
+- **Routing**: React Router
+- **Styling**: CSS Modules, Styled Components, Tailwind CSS
+- **Testing**: Jest, React Testing Library
+
+## Next Steps
+
+Now that you've been introduced to React basics, here's what to explore next:
+
+1. [React Hooks](/guides/react-hooks)
+2. [Component Lifecycle](/guides/component-lifecycle)
+3. [State Management](/guides/state-management)
+4. [Building a Complete App](/tutorials/build-a-react-app)
+
+**Ready to dive deeper?** Check out our
+[React Fundamentals Course](/courses/react-fundamentals)
+
+````
+
+Key changes made:
+1. Removed all `import` statements for custom components
+2. Replaced `<CodeBlock>` components with standard Markdown code blocks (```)
+3. Replaced `<CallToAction>` with simple Markdown formatting
+4. Kept all the same content in a more portable format that works with basic MDX implementations
+
+The content maintains all the same information but now uses standard MDX/Markdown syntax that will work in any MDX processor.
+````

@@ -3,39 +3,31 @@ import Container from '@/components/layout/container'
 import Navbar from '@/sections/header/navbar'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-
 import Image from 'next/image'
-// import { getLocalStorage } from '@/utils/localStorage'
-import { useTheme } from 'next-themes'
+import { useThemeMount } from '@/hooks/use-theme-mount'
 
 const Header = () => {
-  const [mounted, setMounted] = useState(false)
-
-  const { resolvedTheme } = useTheme()
+  const { resolvedTheme, mounted } = useThemeMount()
 
   const logoImage =
     resolvedTheme === 'dark'
       ? '/images/logo/logo-dark.png'
       : '/images/logo/logo-light.png'
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   if (!mounted) return null
 
   return (
     <>
-      <header className='bg-background/75 fixed inset-x-0 top-0 z-50 py-6 backdrop-blur-md'>
-        <Container>
+      <header className='group fixed inset-x-0 top-0 z-50 rounded-xl bg-transparent backdrop-blur-sm'>
+        <Container className='hover:bg-foreground/5 mt-2 rounded-xl px-4 shadow transition-colors duration-300'>
           <nav className='flex items-center justify-between'>
             <Link href={'/'}>
               <Image
                 src={logoImage}
                 alt='Vijay Subramanian'
-                width={50}
-                height={50}
+                width={75}
+                height={75}
+                className='size-12 cursor-pointer'
               />
             </Link>
 

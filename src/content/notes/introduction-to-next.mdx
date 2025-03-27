@@ -1,0 +1,143 @@
+---
+title: Introduction to Next.js
+description:
+  Learn the fundamentals of Next.js, the React framework for production
+date: 2025-03-15
+author: Your Name
+image: /images/notes/introduction-to-nextjs.webp
+tags: ['nextjs', 'react', 'javascript', 'frontend']
+---
+
+# Introduction to Next.js
+
+Next.js is a popular open-source React framework that enables server-side
+rendering, static site generation, and other powerful features out of the box.
+Developed by Vercel, it's designed to help you build production-ready React
+applications with ease.
+
+## Why Use Next.js?
+
+Here are the key advantages of Next.js:
+
+- **Hybrid Rendering**: Supports Static Site Generation (SSG) and Server-Side
+  Rendering (SSR)
+- **File-based Routing**: Automatic routing based on files in the `pages`
+  directory
+- **API Routes**: Build API endpoints alongside your frontend code
+- **Built-in CSS Support**: Supports CSS Modules and Sass out of the box
+- **Image Optimization**: Automatic image optimization via `next/image`
+- **Fast Refresh**: Instant feedback during development
+- **TypeScript Support**: First-class TypeScript experience
+
+## Core Next.js Concepts
+
+### 1. Pages and Routing
+
+Next.js has a file-system based router:
+
+```jsx
+pages/index.js → yoursite.com/
+pages/about.js → yoursite.com/about
+pages/blog/[slug].js → yoursite.com/blog/any-slug
+```
+
+### 2. Data Fetching Methods
+
+Next.js provides several data fetching strategies:
+
+```jsx
+// Static Generation (Recommended)
+export async function getStaticProps() {
+  // Fetch data at build time
+  return { props: {} }
+}
+
+// Server-side Rendering
+export async function getServerSideProps() {
+  // Fetch data on each request
+  return { props: {} }
+}
+
+// Static Paths for dynamic routes
+export async function getStaticPaths() {
+  // Specify dynamic routes to pre-render
+  return { paths: [], fallback: false }
+}
+```
+
+### 3. API Routes
+
+Create API endpoints inside your Next.js app:
+
+```jsx
+// pages/api/hello.js
+export default function handler(req, res) {
+  res.status(200).json({ message: 'Hello World' })
+}
+```
+
+### 4. Image Optimization
+
+Optimized image component:
+
+```jsx
+import Image from 'next/image'
+
+function MyComponent() {
+  return <Image src='/profile.jpg' alt='Profile' width={500} height={500} />
+}
+```
+
+## Setting Up a Next.js Project
+
+Create a new Next.js app:
+
+```bash
+npx create-next-app@latest
+# or
+yarn create next-app
+```
+
+## Next.js vs React
+
+While React is a library, Next.js is a framework that builds on top of React:
+
+| Feature        | React | Next.js |
+| -------------- | ----- | ------- |
+| SSR            | ❌    | ✅      |
+| SSG            | ❌    | ✅      |
+| File Routing   | ❌    | ✅      |
+| API Routes     | ❌    | ✅      |
+| Image Optimize | ❌    | ✅      |
+
+## Next.js Ecosystem
+
+Popular tools that work well with Next.js:
+
+- **State Management**: Redux, Zustand, Context API
+- **Styling**: Tailwind CSS, Styled Components, CSS Modules
+- **Database**: Prisma, Supabase, Firebase
+- **Authentication**: NextAuth.js, Clerk, Auth0
+- **Deployment**: Vercel, Netlify, AWS
+
+## When to Use Next.js?
+
+Consider Next.js when you need:
+
+- SEO-friendly websites (with SSR/SSG)
+- Hybrid static & server applications
+- API routes alongside frontend
+- Optimized production builds
+- Best-in-class developer experience
+
+## Next Steps
+
+Continue your Next.js journey:
+
+1. [Pages and Routing](/guides/nextjs-routing)
+2. [Data Fetching Strategies](/guides/nextjs-data-fetching)
+3. [API Routes](/guides/nextjs-api-routes)
+4. [Deployment](/guides/nextjs-deployment)
+
+**Ready to build with Next.js?** Start with the
+[Official Next.js Documentation](https://nextjs.org/docs)

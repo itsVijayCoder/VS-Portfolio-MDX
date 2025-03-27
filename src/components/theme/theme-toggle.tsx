@@ -2,20 +2,14 @@
 
 import * as React from 'react'
 import { MoonIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
-import { useEffect, useState } from 'react'
 import { setLocalStorage } from '@/utils/localStorage'
+import { useThemeMount } from '@/hooks/use-theme-mount'
 
 export function ThemeToggle() {
-  const { setTheme, resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { setTheme, resolvedTheme, mounted } = useThemeMount()
 
   setLocalStorage('theme', resolvedTheme === 'dark' ? 'dark' : 'light')
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   if (!mounted) return null
   return (
