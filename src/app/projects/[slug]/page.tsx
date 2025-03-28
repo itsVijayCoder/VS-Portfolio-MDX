@@ -6,18 +6,18 @@ type PageProps = {
 }
 
 export const generateStaticParams = async () => {
-  const allNotes = await getContent('notes')
-  const slugs = allNotes.map(note => ({ slug: note.slug }))
+  const allProjects = await getContent('projects')
+  const slugs = allProjects.map(project => ({ slug: project.slug }))
   return slugs
 }
-const DynamicNotesPage = async ({ params }: PageProps) => {
+const DynamicProjectsPage = async ({ params }: PageProps) => {
   const { slug } = await params
 
   if (!slug) {
     return null
   }
 
-  return <DynamicContentPage path='notes' slug={slug} />
+  return <DynamicContentPage path='projects' slug={slug} />
 }
 
-export default DynamicNotesPage
+export default DynamicProjectsPage

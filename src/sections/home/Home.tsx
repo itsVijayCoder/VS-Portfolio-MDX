@@ -1,16 +1,21 @@
 import React from 'react'
 import Intro from '@/sections/home/Intro'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { getContent } from '@/lib/content'
+import RecentContents from '@/components/common-ui/recent-content'
+import Container from '@/components/layout/container'
+import RecentProjects from '@/components/projects/recent-projects'
 
-const Home = () => {
-  const content = `
-    # This is a Markdown content running from MDX file in Next.js Server Component
-  `
+const Home = async () => {
+  const allNotes = await getContent('notes', 2)
+  const allProjects = await getContent('projects', 2)
   return (
-    <section className='py-24'>
-      <Intro />
+    <section className='py-12'>
+      <Container>
+        <Intro />
 
-      <MDXRemote source={content} />
+        <RecentProjects projects={allProjects} path='projects' />
+        <RecentContents contents={allNotes} path='notes' />
+      </Container>
     </section>
   )
 }

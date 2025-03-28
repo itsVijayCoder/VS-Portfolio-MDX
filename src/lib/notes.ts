@@ -18,6 +18,7 @@ export type NoteMetadata = {
 }
 
 const rootDirectory = path.join(process.cwd(), '/src/content/notes')
+// const projectsRootDirectory = path.join(process.cwd(), '/src/content/projects')
 export const getNotesBySlug = async (slug: string): Promise<Note | null> => {
   try {
     const filePath = path.join(rootDirectory, `${slug}.mdx`)
