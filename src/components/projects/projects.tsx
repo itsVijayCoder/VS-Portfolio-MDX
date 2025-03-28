@@ -27,13 +27,13 @@ export default function Projects({ projects, path }: ProjectsPageProps) {
             <div className='bg-background/80 absolute inset-[1px] rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
 
             <div className='absolute inset-x-0 bottom-0 translate-y-2 px-6 py-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100'>
-              <h2 className='title line-clamp-1 text-xl no-underline'>
+              <h2 className='title line-clamp-1 text-3xl no-underline'>
                 {project.title}
               </h2>
-              <p className='text-muted-foreground line-clamp-1 text-sm'>
+              <p className='text-muted-foreground line-clamp-1 text-base'>
                 {project.description}
               </p>
-              <p className='text-muted-foreground text-xs font-light'>
+              <p className='text-muted-foreground text-sm font-light'>
                 {formatDate(project.date ?? '')}
               </p>
             </div>
