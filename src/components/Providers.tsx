@@ -1,8 +1,9 @@
 'use client'
 import React from 'react'
 import { ThemeProvider } from './theme/theme-provider'
-import { useTheme } from 'next-themes'
+// import { useTheme } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
+import { useThemeMount } from '@/hooks/use-theme-mount'
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,12 +20,12 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
 }
 
 function ToasterProvider() {
-  const { resolvedTheme } = useTheme()
+  const { resolvedTheme } = useThemeMount()
 
   return (
     <Toaster
       richColors
-      closeButton
+      // closeButton
       position='top-center'
       theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
     />

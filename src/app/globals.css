@@ -170,6 +170,22 @@
     @apply decoration-border/75 font-playfair text-3xl font-bold underline decoration-2 underline-offset-8;
   }
 
+  pre {
+    @apply bg-accent overflow-x-auto rounded-lg px-5 py-4 text-sm leading-2.5;
+  }
+
+  code {
+    @apply rounded-lg px-10 py-0.5;
+  }
+
+  pre code {
+    @apply p-0 leading-1;
+  }
+
+  code span {
+    @apply font-medium;
+  }
+  /*   
   .prose pre {
     @apply bg-accent overflow-x-auto rounded-lg px-5 py-4 text-sm;
   }
@@ -178,11 +194,11 @@
     @apply rounded-lg px-10 py-0.5;
   }
 
-  .prose pre code {
+  .prose-pre code {
     @apply p-0 leading-3;
   }
 
   .prose code span {
     @apply font-medium;
-  }
+  } */
 }

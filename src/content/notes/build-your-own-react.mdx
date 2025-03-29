@@ -1,0 +1,144 @@
+---
+title: 'Build Your Own React'
+description: 'Learn the Fundamentals of React with core concepts'
+image: /images/notes/introduction-to-nextjs.webp
+date: '2025-01-28'
+author: 'Vijay Subramanian'
+tags: ['React']
+---
+
+---
+
+## **Build Your Own React**
+
+One of the best ways to learn how something works is to build our own simplified
+version of it.
+
+In this exercise, you'll create a `render` function that takes React elements
+and produces the equivalent DOM structure!
+
+To keep things as simple as possible, we won't bother with the `createRoot` API
+discussed in the previous lesson. Instead, we'll write a `render` function that
+takes two parameters:
+
+1. The React element, describing the UI we want.
+2. A target DOM node that will house our application.
+
+**This is meant to be a challenging exercise.** It's 100% OK if you can't solve
+it. Spend 5-10 minutes on it, and then watch the video below.
+
+**Acceptance criteria**?**:**
+
+- The “Result” pane should show the UI described by the React element. It should
+  contain an anchor tag, which links to Wikipedia, and contains the text “Read
+  more on Wikipedia”.
+- It should work with *any element type* (eg. anchors, paragraphs, buttons…)
+- It should handle *all HTML attributes* (eg. `href`, `id`, `disabled`…)
+- The element should contain the text specified
+  under `children`. `children` will always be a string. **Interacting with the
+  DOM(warning)** In order to solve this challenge, you'll need to know how to
+  interact with the DOM, to do things like create DOM elements and append them
+  to the page. We cover all of the methods you'll need in
+  the [“Interacting with the DOM” reference lesson 👀](https://courses.joshwcomeau.com/joy-of-react/10-javascript-primer/01-dom-operations).
+
+```jsx
+function render(reactElement, containerDOMElement) {
+  /* Your code here! */
+
+  const domElement = document.createElement(reactElement.type)
+
+  domElement.innerText = reactElement.children
+  for (const key in reactElement.props) {
+    const value = reactElement.props[key]
+    domElement.setAttribute(key, value)
+  }
+
+  containerDOMElement.appendChild(domElement)
+}
+
+const reactElement = {
+  type: 'a',
+  props: {
+    type: 'button',
+    href: 'https://wikipedia.org/'
+  },
+  children: 'Read more on Wikipedia'
+}
+
+const containerDOMElement = document.querySelector('#root')
+
+render(reactElement, containerDOMElement)
+```
+
+```jsx
+<html>
+  <body>
+    <div id='root'></div>
+  </body>
+</html>
+```
+
+Solution Code
+
+```jsx
+function render(reactElement, containerDOMElement) {
+  // 1. create a DOM element
+  const domElement = document.createElement(reactElement.type)
+
+  // 2. update properties
+  domElement.innerText = reactElement.children
+  for (const key in reactElement.props) {
+    const value = reactElement.props[key]
+    domElement.setAttribute(key, value)
+  }
+
+  // 3. put it in the container
+  containerDOMElement.appendChild(domElement)
+}
+```
+
+## Productive failure
+
+So, you've just attempted the first exercise of the course! How did it go? I
+suspect it was pretty tricky, unless you were already familiar with DOM
+interaction methods. You may not have successfully completed it. You might be
+feeling a bit discouraged or frustrated. **If so, I have some good news for
+you:** you probably learned *a lot more than you think* from this exercise! Most
+online courses give you everything you need right at the start. You can code
+along with the instructor without breaking a sweat, and glide through the
+exercise effortlessly. And, a month later, *you won't remember any of it.* It
+turns out that **struggling and failing** is one of the most effective ways to
+learn a new skill quickly! In academic circles, this is known as *productive
+failure*. Here's a quote from
+a [2019 scientific article](https://www.nature.com/articles/s41539-019-0040-6):
+
+> In Productive Failure, the conventional instruction process is reversed so
+> that learners attempt to solve challenging problems ahead of receiving
+> explicit instruction. While students often fail to produce satisfactory
+> solutions (hence “Failure”), these attempts help learners encode key features
+> and learn better from subsequent instruction (hence “Productive”). **In other
+> words:** if you struggle with a problem, give up, *and then* watch the
+> solution video, you're **much more likely to fully understand and remember
+> things.** This is how we build lasting, generalized skills! Of course, it can
+> be demoralizing to struggle. It can trigger our impostor syndrome, make us
+> doubt ourselves. But this is the wrong interpretation! **All it means is that
+> you're being challenged,** that you're attempting problems that are beyond
+> your current reach. And that's the most effective way to learn! Struggling
+> doesn't mean that you're incapable, *it means that you're growing!* When I
+> worked at Khan Academy, we spoke a lot about having a “growth mindset”. A
+> growth mindset is the belief that our brains are elastic, that we become
+> smarter through practice, and that *failure is the fastest way to
+> learn*. *This mindset is a superpower for developers.* Personally, it's had a
+> huge impact in my own development, my own career. So, this course is designed
+> to be challenging, especially for beginners. **It won't be *all* struggle** —
+> I want us to have fun, after all! But occasionally, the exercises and projects
+> will push you to go *beyond* what we've learned in the lessons. You can learn
+> more about cultivating a growth mindset in this talk from Carol Dweck,
+> presented at
+> Google: [“Mindset: The New Psychology of Success”](https://www.youtube.com/watch?v=-71zdXCMU6A).
+
+### Next Up
+
+[**Understanding JSX**](https://www.notion.so/Understanding-JSX-e1855a8dc2814b44bce1538512c8e158?pvs=21)
+
+---
