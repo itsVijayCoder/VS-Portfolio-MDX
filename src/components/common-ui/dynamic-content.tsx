@@ -56,7 +56,7 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
           </p>
         </header>
 
-        <article className='prose prose-pre:leading-3 prose-code:px-1.5 prose-li:decoration-dashed prose-li:decoration-1 dark:prose-invert mt-16 space-y-4'>
+        <article className='prose prose-pre:leading-5 prose-code:px-1.5 prose-li:decoration-dashed prose-li:decoration-1 dark:prose-invert mt-16 space-y-4'>
           <MDXContent source={content} />
         </article>
 
