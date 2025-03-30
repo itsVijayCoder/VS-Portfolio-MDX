@@ -14,7 +14,7 @@ export default function Projects({ projects, path }: ProjectsPageProps) {
         <li key={project.slug} className='group relative'>
           <Link href={`/${path}/${project.slug}`}>
             {project.image && (
-              <div className='bg-background h-72 w-full overflow-hidden sm:h-60'>
+              <div className='bg-background h-60 w-full overflow-hidden'>
                 <Image
                   src={project.coverImg ? project.coverImg : project.image}
                   alt={project.title || ''}

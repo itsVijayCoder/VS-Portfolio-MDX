@@ -33,7 +33,7 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
         </Link>
 
         {image && (
-          <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
+          <div className='relative mb-6 h-60 w-full overflow-hidden rounded-lg md:h-96'>
             <Image src={image} alt={title || ''} className='object-cove' fill />
           </div>
         )}
