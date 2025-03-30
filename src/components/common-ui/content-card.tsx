@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import { ContentMetadata } from '@/lib/content'
 import { formatDate } from '@/lib/utils'
 import { ArrowRightIcon } from 'lucide-react'
+import { ContentMetadata } from '@/types/types'
 
 export type ContentCardProps = {
   contents: ContentMetadata[]

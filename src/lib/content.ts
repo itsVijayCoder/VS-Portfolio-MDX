@@ -1,23 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-
-export type Content = {
-  metadata: ContentMetadata
-  content: string
-}
-
-export type ContentMetadata = {
-  slug: string
-  title?: string
-  description?: string
-  date?: string
-  tags?: string[]
-  author?: string
-  image?: string
-}
-
-export type PathDirectory = 'notes' | 'projects'
+import { PathDirectory, Content, ContentMetadata } from '@/types/types'
 
 const getContentRootDirectory = (pathDir: PathDirectory) => {
   return path.join(process.cwd(), `/src/content/${pathDir}`)

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils'
-import { ContentMetadata } from '@/lib/content'
+import { ContentMetadata } from '@/types/types'
 
 export type ProjectsPageProps = {
   projects: ContentMetadata[]
@@ -14,12 +14,12 @@ export default function Projects({ projects, path }: ProjectsPageProps) {
         <li key={project.slug} className='group relative'>
           <Link href={`/${path}/${project.slug}`}>
             {project.image && (
-              <div className='bg-muted h-72 w-full overflow-hidden sm:h-60'>
+              <div className='bg-background h-72 w-full overflow-hidden sm:h-60'>
                 <Image
                   src={project.image}
                   alt={project.title || ''}
                   fill
-                  className='rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-105'
+                  className='object-cente rounded-lg object-fill transition-transform duration-500 group-hover:scale-105 group-hover:md:scale-110'
                 />
               </div>
             )}

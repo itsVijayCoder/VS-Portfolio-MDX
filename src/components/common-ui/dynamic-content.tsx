@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import MDXContent from '@/components/mdx-content'
-import { getContentBySlug, PathDirectory } from '@/lib/content'
+import { getContentBySlug } from '@/lib/content'
 import Container from '@/components/layout/container'
+import { PathDirectory } from '@/types/types'
 
 type DynamicContentPageProps = {
   path: PathDirectory
@@ -19,7 +20,7 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
   }
 
   const { metadata, content } = contents
-  const { title, author, date, image, description } = metadata
+  const { title, author, date, image, description, video } = metadata
   return (
     <section className='py-16'>
       <Container className='max-w-3xl'>
@@ -33,12 +34,7 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
 
         {image && (
           <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
-            <Image
-              src={image}
-              alt={title || ''}
-              className='object-cover'
-              fill
-            />
+            <Image src={image} alt={title || ''} className='object-cove' fill />
           </div>
         )}
 
@@ -60,7 +56,23 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
           <MDXContent source={content} />
         </article>
 
-        <footer className='mt-16'>{/* <NewsletterForm /> */}</footer>
+        <footer className='mt-8'>
+          {video && (
+            <div className='space-y-6'>
+              <h1 className='title'>Demo Video</h1>
+              <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
+                {/* <Image src={image} alt={title || ''} className='object-cove' fill /> */}
+                <video
+                  src={video}
+                  controls
+                  className='object-cove'
+                  width='100%'
+                  height='100%'
+                />
+              </div>
+            </div>
+          )}
+        </footer>
       </Container>
     </section>
   )
