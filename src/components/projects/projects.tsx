@@ -16,10 +16,10 @@ export default function Projects({ projects, path }: ProjectsPageProps) {
             {project.image && (
               <div className='bg-background h-72 w-full overflow-hidden sm:h-60'>
                 <Image
-                  src={project.image}
+                  src={project.coverImg ? project.coverImg : project.image}
                   alt={project.title || ''}
                   fill
-                  className='object-cente rounded-lg object-fill transition-transform duration-500 group-hover:scale-105 group-hover:md:scale-110'
+                  className='rounded-lg object-center transition-transform duration-500 group-hover:scale-105'
                 />
               </div>
             )}

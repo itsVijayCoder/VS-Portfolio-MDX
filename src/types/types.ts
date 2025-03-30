@@ -16,6 +16,7 @@ export type ContentMetadata = {
   tags?: string[]
   author?: string
   image?: string
+  coverImg?: string
   video?: string
 }
 
