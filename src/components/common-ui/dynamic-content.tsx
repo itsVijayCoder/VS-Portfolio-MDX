@@ -1,26 +1,26 @@
-import { formatDate } from '@/lib/utils'
-import { ArrowLeftIcon } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import MDXContent from '@/components/mdx-content'
-import { getContentBySlug } from '@/lib/content'
-import Container from '@/components/layout/container'
-import { PathDirectory } from '@/types/types'
+import { formatDate } from '@/lib/utils';
+import { ArrowLeftIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import MDXContent from '@/components/mdx-content';
+import { getContentBySlug } from '@/lib/content';
+import Container from '@/components/layout/container';
+import { PathDirectory } from '@/types/types';
 
 type DynamicContentPageProps = {
-  path: PathDirectory
-  slug: string
-}
+  path: PathDirectory;
+  slug: string;
+};
 const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
-  const contents = await getContentBySlug(path, slug)
+  const contents = await getContentBySlug(path, slug);
 
   if (!contents) {
-    return notFound()
+    return notFound();
   }
 
-  const { metadata, content } = contents
-  const { title, author, date, image, description, video } = metadata
+  const { metadata, content } = contents;
+  const { title, author, date, image, description, video } = metadata;
   return (
     <section className='py-16'>
       <Container className='max-w-3xl'>
@@ -75,7 +75,7 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
         </footer>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default DynamicContentPage
+export default DynamicContentPage;

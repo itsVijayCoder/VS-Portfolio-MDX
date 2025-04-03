@@ -1,10 +1,10 @@
 // import ContentWithSearch from '@/components/common-ui/content-with-search'
-import Container from '@/components/layout/container'
-import Projects from '@/components/projects/projects'
-import { getContent } from '@/lib/content'
+import Container from '@/components/layout/container';
+import Projects from '@/components/projects/projects';
+import { getContent } from '@/lib/content';
 
 const ProjectsPage = async () => {
-  const allProjects = await getContent('projects')
+  const allProjects = await getContent('projects');
   return (
     <>
       <Container className='max-w-3xl py-10'>
@@ -14,7 +14,7 @@ const ProjectsPage = async () => {
         <Projects projects={allProjects} path='projects' />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default ProjectsPage
+export default ProjectsPage;

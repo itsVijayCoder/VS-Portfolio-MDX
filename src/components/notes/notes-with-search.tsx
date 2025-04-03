@@ -1,23 +1,26 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { NoteMetadata } from '@/lib/notes'
+import { useState } from 'react';
+import { NoteMetadata } from '@/lib/notes';
 
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 // import { Cross2Icon } from '@radix-ui/react-icons'
-import NotesCard from './notes-card'
-import { X } from 'lucide-react'
+import NotesCard from './notes-card';
+import { X } from 'lucide-react';
+import RecentProjects from '../projects/recent-projects';
+// import { ProjectsPageProps } from '../projects/projects';
 
 export default function NotesWithSearch({ notes }: { notes: NoteMetadata[] }) {
-  const [query, setQuery] = useState('')
-  const filtered = notes.filter(post =>
-    post.title?.toLowerCase().includes(query.toLowerCase())
-  )
+  const [query, setQuery] = useState('');
 
-  const isFiltered = query.length > 0
+  const filtered = notes.filter((post) =>
+    post.title?.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const isFiltered = query.length > 0;
   function resetFilter() {
-    setQuery('')
+    setQuery('');
   }
 
   return (
@@ -28,7 +31,7 @@ export default function NotesWithSearch({ notes }: { notes: NoteMetadata[] }) {
           placeholder='Search notes...'
           className='h-9 w-full sm:w-1/2'
           value={query}
-          onChange={e => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
         />
         {isFiltered && (
           <Button
@@ -44,6 +47,8 @@ export default function NotesWithSearch({ notes }: { notes: NoteMetadata[] }) {
       </div>
 
       <NotesCard notes={filtered} />
+
+      <RecentProjects limit={2} path='projects' />
     </div>
-  )
+  );
 }

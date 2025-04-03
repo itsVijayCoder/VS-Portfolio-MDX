@@ -1,10 +1,13 @@
-import Link from 'next/link'
-import Projects, { ProjectsPageProps } from './projects'
+import Link from 'next/link';
+import Projects from './projects';
+import { RecentContentsProps } from '@/types/types';
+import { getContent } from '@/lib/content';
 
 export default async function RecentProjects({
-  projects,
+  limit,
   path
-}: ProjectsPageProps) {
+}: RecentContentsProps) {
+  const projects = await getContent(path, limit ? limit : 0);
   return (
     <section className='pb-24'>
       <div>
@@ -19,5 +22,5 @@ export default async function RecentProjects({
         </Link>
       </div>
     </section>
-  )
+  );
 }

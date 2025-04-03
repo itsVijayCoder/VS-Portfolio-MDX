@@ -1,18 +1,18 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import { formatDate } from '@/lib/utils'
-import { ArrowRightIcon } from 'lucide-react'
-import { ContentMetadata } from '@/types/types'
+import { formatDate } from '@/lib/utils';
+import { ArrowRightIcon } from 'lucide-react';
+import { ContentMetadata } from '@/types/types';
 
 export type ContentCardProps = {
-  contents: ContentMetadata[]
-  path: string
-}
+  contents: ContentMetadata[];
+  path: string;
+};
 export default function ContentCard({ contents, path }: ContentCardProps) {
   return (
     // <ul className='flex flex-col gap-3'>
     <ul className='grid grid-cols-2 gap-3'>
-      {contents.map(content => (
+      {contents?.map((content) => (
         <li
           key={content.slug}
           className='bg-car group hover:bg-muted-foreground/5 relative col-span-2 rounded-lg p-5 shadow-lg transition-all duration-300 hover:translate-y-1 hover:shadow-md md:col-span-1 lg:col-span-2'
@@ -43,5 +43,5 @@ export default function ContentCard({ contents, path }: ContentCardProps) {
         </li>
       ))}
     </ul>
-  )
+  );
 }

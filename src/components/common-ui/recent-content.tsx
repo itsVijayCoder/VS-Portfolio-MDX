@@ -1,10 +1,13 @@
-import Link from 'next/link'
-import ContentCard, { ContentCardProps } from './content-card'
+import Link from 'next/link';
+import ContentCard from './content-card';
+import { getContent } from '@/lib/content';
+import { RecentContentsProps } from '@/types/types';
 
 export default async function RecentContents({
-  contents,
+  limit,
   path
-}: ContentCardProps) {
+}: RecentContentsProps) {
+  const contents = await getContent(path, limit ? limit : 0);
   return (
     <section className='pb-24'>
       <div>
@@ -19,5 +22,5 @@ export default async function RecentContents({
         </Link>
       </div>
     </section>
-  )
+  );
 }
