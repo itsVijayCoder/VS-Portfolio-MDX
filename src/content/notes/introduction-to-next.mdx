@@ -49,19 +49,19 @@ Next.js provides several data fetching strategies:
 // Static Generation (Recommended)
 export async function getStaticProps() {
   // Fetch data at build time
-  return { props: {} }
+  return { props: {} };
 }
 
 // Server-side Rendering
 export async function getServerSideProps() {
   // Fetch data on each request
-  return { props: {} }
+  return { props: {} };
 }
 
 // Static Paths for dynamic routes
 export async function getStaticPaths() {
   // Specify dynamic routes to pre-render
-  return { paths: [], fallback: false }
+  return { paths: [], fallback: false };
 }
 ```
 
@@ -72,7 +72,7 @@ Create API endpoints inside your Next.js app:
 ```jsx
 // pages/api/hello.js
 export default function handler(req, res) {
-  res.status(200).json({ message: 'Hello World' })
+  res.status(200).json({ message: 'Hello World' });
 }
 ```
 
@@ -81,10 +81,10 @@ export default function handler(req, res) {
 Optimized image component:
 
 ```jsx
-import Image from 'next/image'
+import Image from 'next/image';
 
 function MyComponent() {
-  return <Image src='/profile.jpg' alt='Profile' width={500} height={500} />
+  return <Image src='/profile.jpg' alt='Profile' width={500} height={500} />;
 }
 ```
 

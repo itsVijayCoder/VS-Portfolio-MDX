@@ -20,9 +20,9 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
   }
 
   const { metadata, content } = contents;
-  const { title, author, date, image, description, video } = metadata;
+  const { title, author, date, image, description } = metadata;
   return (
-    <section className='py-16'>
+    <section className='py-10 md:py-16'>
       <Container className='max-w-3xl'>
         <Link
           href={`/${path}`}
@@ -33,46 +33,52 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
         </Link>
 
         {image && (
-          <div className='relative mb-6 h-60 w-full overflow-hidden rounded-lg md:h-96'>
+          <div className='relative mb-6 h-48 w-full overflow-hidden rounded-lg md:h-96'>
             <Image src={image} alt={title || ''} className='object-cove' fill />
           </div>
         )}
 
         <header className='space-y-3'>
-          <div className='flex items-start gap-3'>
-            <h1 className='title'>{title}</h1>
-            <p className='text-foreground/60 mt-4 text-xs'>
-              <span className='bg-foreground/10 rounded p-1'>
+          <div className='flex flex-col items-start justify-between gap-3 space-y-3 md:flex-row'>
+            <h1 className='title text-4xl'>{title}</h1>
+            <div className='text-foreground/60 my-3 flex items-center gap-2 text-xs md:m-0'>
+              <Image
+                src='/memoji/vs-memoji.png'
+                alt='memoji'
+                width={100}
+                height={100}
+                className='size-10 rounded-full'
+              />
+              <p className='bg-foreground/10 rounded p-1'>
                 {author} / {formatDate(date ?? '')}
-              </span>
-            </p>
+              </p>
+            </div>
           </div>
           <p className='text-muted-foreground mt-1 text-sm font-light'>
             {description}
           </p>
         </header>
 
-        <article className='prose prose-pre:leading-5 prose-code:px-1.5 prose-li:decoration-dashed prose-li:decoration-1 dark:prose-invert mt-16 space-y-4'>
+        <article className='mdx-content-style'>
           <MDXContent source={content} />
         </article>
 
-        <footer className='mt-8'>
+        {/* <footer className='mt-8'>
           {video && (
             <div className='space-y-6'>
               <h1 className='title'>Demo Video</h1>
               <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
-                {/* <Image src={image} alt={title || ''} className='object-cove' fill /> */}
                 <video
                   src={video}
                   controls
-                  className='object-cove'
+                  className='object-cover'
                   width='100%'
                   height='100%'
                 />
               </div>
             </div>
           )}
-        </footer>
+        </footer> */}
       </Container>
     </section>
   );

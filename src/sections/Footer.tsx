@@ -43,14 +43,14 @@ const Footer = () => {
   return (
     <Container>
       <footer className='footer-gradient flex flex-col items-center justify-center space-y-10 overflow-hidden rounded-lg border-t-2 py-10 sm:py-20'>
-        <div className='flex flex-col gap-x-10 gap-y-3 sm:flex-row'>
+        <div className='flex flex-row flex-wrap gap-x-5 gap-y-3 text-center md:gap-x-10'>
           {FOOTER_NAVIGATION.map((item) => (
             <div
               key={item.id}
               className='group flex items-center justify-center p-1'
             >
               <Link
-                href={item.href}
+                href={`${item.href}`}
                 className='text-muted-foreground group-hover:text-primary-blue flex text-sm leading-6 font-semibold transition-all duration-300 group-hover:-translate-y-0.5'
               >
                 {item.name}

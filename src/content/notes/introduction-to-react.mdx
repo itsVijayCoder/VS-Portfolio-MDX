@@ -37,7 +37,7 @@ of UI.
 ```jsx
 // Simple functional component
 function Greeting() {
-  return <h1>Hello, React!</h1>
+  return <h1>Hello, React!</h1>;
 }
 ```
 
@@ -47,7 +47,7 @@ JSX is a syntax extension that allows you to write HTML-like code in your
 JavaScript.
 
 ```jsx
-const element = <h1 className='title'>Hello, world!</h1>
+const element = <h1 className='title'>Hello, world!</h1>;
 ```
 
 ### 3. Props
@@ -57,11 +57,11 @@ components.
 
 ```jsx
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>
+  return <h1>Hello, {props.name}</h1>;
 }
 
 // Usage
-;<Welcome name='Sarah' />
+<Welcome name='Sarah' />;
 ```
 
 ### 4. State
@@ -69,17 +69,17 @@ function Welcome(props) {
 State allows components to manage and track changes to their data.
 
 ```jsx
-import { useState } from 'react'
+import { useState } from 'react';
 
 function Counter() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -99,7 +99,7 @@ Let's create a simple component that displays a list of items:
 
 ```jsx
 function ItemList() {
-  const items = ['React', 'JSX', 'Components', 'State']
+  const items = ['React', 'JSX', 'Components', 'State'];
 
   return (
     <ul>
@@ -107,7 +107,7 @@ function ItemList() {
         <li key={index}>{item}</li>
       ))}
     </ul>
-  )
+  );
 }
 ```
 
@@ -132,13 +132,4 @@ Now that you've been introduced to React basics, here's what to explore next:
 **Ready to dive deeper?** Check out our
 [React Fundamentals Course](/courses/react-fundamentals)
 
-````
-
-Key changes made:
-1. Removed all `import` statements for custom components
-2. Replaced `<CodeBlock>` components with standard Markdown code blocks (```)
-3. Replaced `<CallToAction>` with simple Markdown formatting
-4. Kept all the same content in a more portable format that works with basic MDX implementations
-
-The content maintains all the same information but now uses standard MDX/Markdown syntax that will work in any MDX processor.
-````
+---
