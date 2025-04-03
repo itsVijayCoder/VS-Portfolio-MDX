@@ -12,7 +12,7 @@ export default function Projects({ projects, path }: ProjectsPageProps) {
     <section className='space-y-10'>
       <ul className='grid grid-cols-1 gap-8 sm:grid-cols-2'>
         {projects.map((project) => (
-          <li key={project.slug} className='group relative'>
+          <div key={project.slug} className='group relative'>
             <Link href={`/${path}/${project.slug}`}>
               {project.image && (
                 <div className='bg-background h-60 w-full overflow-hidden'>
@@ -39,7 +39,7 @@ export default function Projects({ projects, path }: ProjectsPageProps) {
                 </p>
               </div>
             </Link>
-          </li>
+          </div>
         ))}
       </ul>
     </section>

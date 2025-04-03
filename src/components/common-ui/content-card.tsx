@@ -13,7 +13,7 @@ export default function ContentCard({ contents, path }: ContentCardProps) {
     // <ul className='flex flex-col gap-3'>
     <ul className='grid grid-cols-2 gap-3'>
       {contents?.map((content) => (
-        <li
+        <div
           key={content.slug}
           className='bg-car group hover:bg-muted-foreground/5 relative col-span-2 rounded-lg p-5 shadow-lg transition-all duration-300 hover:translate-y-1 hover:shadow-md md:col-span-1 lg:col-span-2'
         >
@@ -40,7 +40,7 @@ export default function ContentCard({ contents, path }: ContentCardProps) {
               </p>
             )}
           </Link>
-        </li>
+        </div>
       ))}
     </ul>
   );

@@ -42,13 +42,16 @@ const FOOTER_SOCIAL_LINKS = [
 const Footer = () => {
   return (
     <Container>
-      <footer className='flex-col items-center justify-center space-y-10 overflow-hidden border-t border-zinc-200 py-20 dark:border-zinc-700'>
-        <div className='sm:flex sm:justify-center sm:space-x-12'>
+      <footer className='footer-gradient flex flex-col items-center justify-center space-y-10 overflow-hidden rounded-lg border-t-2 py-10 sm:py-20'>
+        <div className='flex flex-col gap-x-10 gap-y-3 sm:flex-row'>
           {FOOTER_NAVIGATION.map((item) => (
-            <div key={item.id} className=''>
+            <div
+              key={item.id}
+              className='group flex items-center justify-center p-1'
+            >
               <Link
                 href={item.href}
-                className='text-muted-foreground hover:text-primary-blue text-sm leading-6'
+                className='text-muted-foreground group-hover:text-primary-blue flex text-sm leading-6 font-semibold transition-all duration-300 group-hover:-translate-y-0.5'
               >
                 {item.name}
               </Link>
@@ -57,25 +60,17 @@ const Footer = () => {
         </div>
         <div className='flex items-center justify-center space-x-10'>
           {FOOTER_SOCIAL_LINKS.map((item) => (
-            <div key={item.id} className=''>
+            <div key={item.id} className='group'>
               <Link
                 href={item.href}
-                className='text-muted-foreground/60 hover:text-primary-blue flex flex-col items-center text-sm leading-6'
+                className='text-muted-foreground/80 group-hover:text-primary-blue flex flex-col items-center text-sm leading-6 duration-300 group-hover:-translate-y-0.5'
               >
                 <item.icon className='size-6' />
-                {/* <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={24}
-                  height={24}
-                  className='text-primary-blue hover:fill-primary-blue size-8'
-                /> */}
-                {/* {item.name} */}
               </Link>
             </div>
           ))}
         </div>
-        <div className='text-muted-foreground/60 text-center text-xs leading-5'>
+        <div className='text-muted-foreground/70 text-center text-xs leading-5'>
           &copy; 2025 Vijay Subramanian, Inc. All rights reserved.
         </div>
       </footer>

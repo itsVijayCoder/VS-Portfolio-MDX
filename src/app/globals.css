@@ -166,6 +166,14 @@
     @apply relative ms-10 cursor-pointer text-sm font-semibold uppercase after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white;
   }
 
+  .footer-gradient {
+    @apply from-background/30 to-background/30 via-foreground/30 bg-gradient-to-tr via-50% to-95%;
+  }
+
+  li {
+    @apply after:bg-primary-blue relative list-none leading-7 after:absolute after:top-[12px] after:-left-5 after:h-[2px] after:w-2;
+  }
+
   .title {
     @apply decoration-border/75 font-playfair text-3xl font-bold underline decoration-2 underline-offset-8;
   }

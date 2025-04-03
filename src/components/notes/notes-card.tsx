@@ -1,13 +1,13 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import { NoteMetadata } from '@/lib/notes'
-import { formatDate } from '@/lib/utils'
+import { NoteMetadata } from '@/lib/notes';
+import { formatDate } from '@/lib/utils';
 
 export default function NotesCard({ notes }: { notes: NoteMetadata[] }) {
   return (
     <ul className='flex flex-col gap-8'>
-      {notes.map(note => (
-        <li key={note.slug}>
+      {notes.map((note) => (
+        <div key={note.slug}>
           <Link
             href={`/notes/${note.slug}`}
             className='flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row'
@@ -23,8 +23,8 @@ export default function NotesCard({ notes }: { notes: NoteMetadata[] }) {
               <p className='mt-1 text-sm font-light'>{formatDate(note.date)}</p>
             )}
           </Link>
-        </li>
+        </div>
       ))}
     </ul>
-  )
+  );
 }

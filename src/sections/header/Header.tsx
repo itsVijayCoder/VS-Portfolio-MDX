@@ -1,20 +1,20 @@
-'use client'
-import Container from '@/components/layout/container'
-import Navbar from '@/sections/header/navbar'
-import { ThemeToggle } from '@/components/theme/theme-toggle'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useThemeMount } from '@/hooks/use-theme-mount'
+'use client';
+import Container from '@/components/layout/container';
+import Navbar from '@/sections/header/navbar';
+// import { ThemeToggle } from '@/components/theme/theme-toggle';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useThemeMount } from '@/hooks/use-theme-mount';
 
 const Header = () => {
-  const { resolvedTheme, mounted } = useThemeMount()
+  const { resolvedTheme, mounted } = useThemeMount();
 
   const logoImage =
     resolvedTheme === 'dark'
       ? '/images/logo/logo-dark.png'
-      : '/images/logo/logo-light.png'
+      : '/images/logo/logo-light.png';
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <header>
@@ -33,14 +33,14 @@ const Header = () => {
 
             <Navbar />
 
-            <div className='mr-1 flex items-center justify-between'>
+            {/* <div className='mr-1 flex items-center justify-between'>
               <ThemeToggle />
-            </div>
+            </div> */}
           </nav>
         </div>
       </Container>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
