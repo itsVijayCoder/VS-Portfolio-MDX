@@ -17,9 +17,9 @@ const Header = () => {
   if (!mounted) return null;
 
   return (
-    <header>
-      <Container className='group fixed inset-x-0 top-0 z-50 rounded-xl bg-transparent backdrop-blur'>
-        <div className='hover:bg-foreground/15 mt-2 rounded-xl px-2 py-1 shadow transition-colors duration-300'>
+    <header className='group fixed inset-x-0 top-0 z-50 rounded-xl bg-transparent'>
+      <Container>
+        <div className='hover:bg-background/60 bg-background/70 mt-2 rounded-xl px-2 py-1 shadow backdrop-blur-sm transition-colors duration-300'>
           <nav className='flex items-center justify-between'>
             <Link href={'/'}>
               <Image

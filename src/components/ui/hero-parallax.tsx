@@ -9,19 +9,22 @@ import {
 } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ContainerTextFlip } from './container-text-flip';
 
-export const HeroParallax = ({
-  products
-}: {
-  products: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  }[];
-}) => {
-  const firstRow = products.slice(0, 4);
-  const secondRow = products.slice(4, 8);
-  const thirdRow = products.slice(8, 12);
+type Products = {
+  id: number;
+  title: string;
+  link: string;
+  thumbnail: string;
+};
+
+type HeroParallaxProps = {
+  products: Products[];
+};
+export const HeroParallax = ({ products }: HeroParallaxProps) => {
+  const firstRow = products.slice(0, 5);
+  const secondRow = products.slice(5, 10);
+  const thirdRow = products.slice(10, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -57,7 +60,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className='relative flex h-[300vh] flex-col self-auto overflow-hidden rounded-lg py-10 antialiased [perspective:1000px] [transform-style:preserve-3d]'
+      className='relative flex h-[250vh] flex-col self-auto overflow-hidden rounded-lg py-10 antialiased [perspective:1000px] [transform-style:preserve-3d] lg:h-[310vh] 2xl:h-[230v]'
     >
       <Header />
       <motion.div
@@ -74,7 +77,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -83,7 +86,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -92,7 +95,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -104,10 +107,24 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className='relative top-0 left-0 mx-auto w-full max-w-7xl px-4 py-20 md:py-40'>
-      <h1 className='text-2xl font-bold md:text-7xl dark:text-white'>
-        The Ultimate <br /> web development
+      <h1 className='hidden text-2xl font-bold sm:block md:text-7xl dark:text-white'>
+        The Ultimate{' '}
+        <span className=''>
+          <ContainerTextFlip
+            words={['React', 'NextJS', 'TypeScript']}
+            textClassName='text-primary-blue '
+            className='[background:var(--color-background)]'
+          />
+        </span>
+        <br />
+        developer..
       </h1>
-      <p className='mt-8 max-w-2xl text-base md:text-xl dark:text-neutral-200'>
+      <h1 className='text-3xl font-bold sm:hidden md:text-7xl dark:text-white'>
+        The Ultimate <span className='text-primary-blue text-4xl'>React</span>
+        <br />
+        developer..
+      </h1>
+      <p className='mt-8 max-w-2xl text-lg md:text-xl'>
         I build beautiful products with the latest technologies and frameworks.
         I am a passionate developer that love to build amazing products.
       </p>
@@ -115,17 +132,12 @@ export const Header = () => {
   );
 };
 
-export const ProductCard = ({
-  product,
-  translate
-}: {
-  product: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
+type ProductCardProps = {
+  product: Products;
   translate: MotionValue<number>;
-}) => {
+};
+
+export const ProductCard = ({ product, translate }: ProductCardProps) => {
   return (
     <motion.div
       style={{
@@ -134,7 +146,7 @@ export const ProductCard = ({
       whileHover={{
         y: -20
       }}
-      key={product.title}
+      key={product.id}
       className='group/product relative h-96 w-[40rem] shrink-0'
     >
       <Link

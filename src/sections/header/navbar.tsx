@@ -37,7 +37,7 @@ const Navigation = () => {
   console.log(pathName);
   return (
     <>
-      <ul className='items-center gap-14 sm:flex'>
+      <ul className='flex flex-col items-center gap-6 sm:flex-row sm:gap-14'>
         {NAVBAR_ITEMS.map((item) => {
           return (
             <Link

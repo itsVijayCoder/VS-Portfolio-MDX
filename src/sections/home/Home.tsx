@@ -8,10 +8,10 @@ import { HERO_PRODUCTS } from '@/data/hero-parallax-data';
 
 const Home = async () => {
   return (
-    <section className='py-12'>
+    <section className='space-y-8 py-4 md:py-12'>
+      <HeroParallax products={HERO_PRODUCTS} />
       <Container className='space-y-8'>
         {/* <Intro /> */}
-        <HeroParallax products={HERO_PRODUCTS} />
 
         <RecentContents limit={2} path='notes' />
         <RecentProjects limit={2} path='projects' />

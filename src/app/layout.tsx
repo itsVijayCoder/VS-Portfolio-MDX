@@ -33,7 +33,8 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className='mt-16 grow scroll-smooth'>
-            <Container>{children}</Container>
+            <Container className='max-w-7xl'>{children}</Container>
+            {/* {children} */}
           </main>
           <Footer />
         </Providers>
