@@ -179,7 +179,7 @@
   } */
 
   .title {
-    @apply decoration-border/75 font-playfair text-3xl font-bold underline decoration-2 underline-offset-8;
+    @apply decoration-border/75 font-playfair text-2xl font-bold underline decoration-2 underline-offset-8 lg:text-3xl;
   }
 
   .mdx-content-style {

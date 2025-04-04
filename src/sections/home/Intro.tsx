@@ -11,7 +11,7 @@ const Intro = () => {
     <>
       <section className='flex flex-col-reverse items-start gap-x-10 gap-y-4 pb-12 md:flex-row md:items-center'>
         <div className='mt-2 flex-1 md:mt-0'>
-          <h1 className='title flex items-center gap-4 no-underline'>
+          <h1 className='title items-center gap-2 no-underline md:flex lg:gap-4'>
             Hey, I&#39;m{' '}
             <span className=''>
               <TypewriterEffectSmooth words={words} />
