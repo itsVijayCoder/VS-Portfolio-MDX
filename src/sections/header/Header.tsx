@@ -11,8 +11,8 @@ const Header = () => {
 
   const logoImage =
     resolvedTheme === 'dark'
-      ? '/images/logo/logo-dark.png'
-      : '/images/logo/logo-light.png';
+      ? '/images/logo/logo-dark.webp'
+      : '/images/logo/logo-light.webp';
 
   if (!mounted) return null;
 

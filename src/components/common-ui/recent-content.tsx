@@ -9,14 +9,14 @@ export default async function RecentContents({
 }: RecentContentsProps) {
   const contents = await getContent(path, limit ? limit : 0);
   return (
-    <section className='pb-24'>
+    <section className='pb-4'>
       <div>
         <h2 className='title mb-12'>Recent {path}</h2>
         <ContentCard contents={contents} path={path} />
 
         <Link
           href={`/${path}`}
-          className='text-muted-foreground hover:text-foreground mt-8 inline-flex items-center gap-2 underline decoration-1 underline-offset-2 transition-colors'
+          className='text-muted-foreground hover:text-foreground decoration-primary-blue mt-8 inline-flex items-center gap-2 underline decoration-[1.5px] underline-offset-4 transition-colors'
         >
           <span>All {path}</span>
         </Link>

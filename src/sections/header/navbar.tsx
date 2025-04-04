@@ -18,25 +18,25 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
-  const pathName = usePathname();
-  console.log(pathName);
-
   return (
     <>
-      <DesktopView pathName={pathName} />
-      <MobileView pathName={pathName} />
+      <DesktopView />
+      <MobileView />
     </>
   );
 };
 
 export default Navbar;
 
-type NavbarViewProps = {
-  pathName: string;
-};
-const DesktopView = ({ pathName }: NavbarViewProps) => {
+// type NavbarViewProps = {
+//   pathName: string;
+// };
+
+const Navigation = () => {
+  const pathName = usePathname();
+  console.log(pathName);
   return (
-    <div className='hidden items-center justify-between gap-40 sm:flex'>
+    <>
       <ul className='items-center gap-14 sm:flex'>
         {NAVBAR_ITEMS.map((item) => {
           return (
@@ -55,7 +55,14 @@ const DesktopView = ({ pathName }: NavbarViewProps) => {
           );
         })}
       </ul>
+    </>
+  );
+};
 
+const DesktopView = () => {
+  return (
+    <div className='hidden items-center justify-between gap-40 sm:flex'>
+      <Navigation />
       <div className='mr-1 flex items-center justify-between'>
         <ThemeToggle />
       </div>
@@ -63,7 +70,7 @@ const DesktopView = ({ pathName }: NavbarViewProps) => {
   );
 };
 
-const MobileView = ({ pathName }: NavbarViewProps) => {
+const MobileView = () => {
   return (
     <div className='sm:hidden'>
       <Sheet>
@@ -79,24 +86,7 @@ const MobileView = ({ pathName }: NavbarViewProps) => {
               <ThemeToggle />
             </SheetTitle>
           </SheetHeader>
-          <ul className='flex flex-col items-center gap-8'>
-            {NAVBAR_ITEMS.map((item) => {
-              return (
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'nav-hover-btn',
-                    pathName.includes(item.href)
-                      ? 'border-primary-blue text-primary-blue border-b-[3px]'
-                      : ''
-                  )}
-                  key={item.label}
-                >
-                  <span>{item.label}</span>
-                </Link>
-              );
-            })}
-          </ul>
+          <Navigation />
         </SheetContent>
       </Sheet>
     </div>

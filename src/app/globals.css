@@ -159,7 +159,7 @@
   }
 
   .nav-hover-btn {
-    @apply font-poppins text-muted-foreground hover:text-foreground after:bg-primary-blue relative cursor-pointer text-sm font-semibold uppercase transition-colors duration-300 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:h-0.5 hover:after:origin-bottom-left hover:after:scale-x-100;
+    @apply font-poppins text-muted-foreground hover:text-foreground after:bg-primary-blue relative cursor-pointer text-sm font-semibold uppercase decoration-2 transition-colors duration-300 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:h-[2px] hover:after:origin-bottom-left hover:after:scale-x-100;
   }
 
   .nav-hover-btn-1 {

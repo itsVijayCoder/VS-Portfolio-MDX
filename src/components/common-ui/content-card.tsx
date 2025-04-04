@@ -35,7 +35,7 @@ export default function ContentCard({ contents, path }: ContentCardProps) {
             </div>
 
             {content.date && (
-              <p className='group-hover:text-primary-blue mt-1 text-sm font-light transition-all duration-300 group-hover:font-medium group-hover:underline'>
+              <p className='group-hover:text-primary-blue mt-1 text-sm font-light transition-all duration-300 group-hover:font-medium group-hover:underline group-hover:decoration-[1.5px] group-hover:underline-offset-4 group-hover:duration-300'>
                 {formatDate(content.date)}
               </p>
             )}

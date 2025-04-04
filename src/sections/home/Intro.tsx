@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 const Intro = () => {
   return (
@@ -18,7 +18,7 @@ const Intro = () => {
 
         <div className='relative'>
           <Image
-            src='/images/author/vijay.png'
+            src='/images/author/vijay.webp'
             alt='Vijay Subramanian'
             width={175}
             height={175}
@@ -28,7 +28,7 @@ const Intro = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;
