@@ -45,15 +45,15 @@ it. Spend 5-10 minutes on it, and then watch the video below.
 function render(reactElement, containerDOMElement) {
   /* Your code here! */
 
-  const domElement = document.createElement(reactElement.type)
+  const domElement = document.createElement(reactElement.type);
 
-  domElement.innerText = reactElement.children
+  domElement.innerText = reactElement.children;
   for (const key in reactElement.props) {
-    const value = reactElement.props[key]
-    domElement.setAttribute(key, value)
+    const value = reactElement.props[key];
+    domElement.setAttribute(key, value);
   }
 
-  containerDOMElement.appendChild(domElement)
+  containerDOMElement.appendChild(domElement);
 }
 
 const reactElement = {
@@ -63,11 +63,11 @@ const reactElement = {
     href: 'https://wikipedia.org/'
   },
   children: 'Read more on Wikipedia'
-}
+};
 
-const containerDOMElement = document.querySelector('#root')
+const containerDOMElement = document.querySelector('#root');
 
-render(reactElement, containerDOMElement)
+render(reactElement, containerDOMElement);
 ```
 
 ```jsx
@@ -83,17 +83,17 @@ Solution Code
 ```jsx
 function render(reactElement, containerDOMElement) {
   // 1. create a DOM element
-  const domElement = document.createElement(reactElement.type)
+  const domElement = document.createElement(reactElement.type);
 
   // 2. update properties
-  domElement.innerText = reactElement.children
+  domElement.innerText = reactElement.children;
   for (const key in reactElement.props) {
-    const value = reactElement.props[key]
-    domElement.setAttribute(key, value)
+    const value = reactElement.props[key];
+    domElement.setAttribute(key, value);
   }
 
   // 3. put it in the container
-  containerDOMElement.appendChild(domElement)
+  containerDOMElement.appendChild(domElement);
 }
 ```
 

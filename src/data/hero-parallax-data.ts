@@ -15,10 +15,10 @@ export const HERO_PRODUCTS = [
   },
   {
     id: 3,
-    title: 'MediClient',
-    link: '/projects/medi-client',
-    // link: 'https://vs-medi-client.vercel.app/',
-    thumbnail: '/images/projects/medi-client/medi-client-cover.webp'
+    title: 'Portfolio-MDX',
+    link: '/projects/vijay-portfolio-mdx',
+    // link: 'https://vijay-dev-portfolio.vercel.app/',
+    thumbnail: '/images/projects/portfolio-mdx/portfolio-mdx-light-cover.webp'
   },
   {
     id: 4,
@@ -29,10 +29,10 @@ export const HERO_PRODUCTS = [
   },
   {
     id: 5,
-    title: 'Portfolio-MDX',
-    link: '/projects/vijay-portfolio-mdx',
-    // link: 'https://vijay-dev-portfolio.vercel.app/',
-    thumbnail: '/images/projects/portfolio-mdx/portfolio-mdx-cover.webp'
+    title: 'MediClient',
+    link: '/projects/medi-client',
+    // link: 'https://vs-medi-client.vercel.app/',
+    thumbnail: '/images/projects/medi-client/medi-client-cover.webp'
   },
 
   {
@@ -54,7 +54,7 @@ export const HERO_PRODUCTS = [
     title: 'Portfolio-MDX',
     link: '/projects/vijay-portfolio-mdx',
     // link: 'https://vijay-dev-portfolio.vercel.app/',
-    thumbnail: '/images/projects/portfolio-mdx/portfolio-mdx-cover.webp'
+    thumbnail: '/images/projects/portfolio-mdx/portfolio-mdx-light-cover.webp'
   },
   {
     id: 9,
@@ -88,17 +88,17 @@ export const HERO_PRODUCTS = [
 
   {
     id: 13,
-    title: 'Portfolio-MDX',
-    link: '/projects/vijay-portfolio-mdx',
-    // link: 'https://vijay-dev-portfolio.vercel.app/',
-    thumbnail: '/images/projects/portfolio-mdx/portfolio-mdx-cover.webp'
-  },
-  {
-    id: 14,
     title: 'MediClient',
     link: '/projects/medi-client',
     // link: 'https://vs-medi-client.vercel.app/',
     thumbnail: '/images/projects/medi-client/medi-client-cover.webp'
+  },
+  {
+    id: 14,
+    title: 'Portfolio-MDX',
+    link: '/projects/vijay-portfolio-mdx',
+    // link: 'https://vijay-dev-portfolio.vercel.app/',
+    thumbnail: '/images/projects/portfolio-mdx/portfolio-mdx-light-cover.webp'
   },
   {
     id: 15,
