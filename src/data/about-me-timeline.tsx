@@ -61,6 +61,7 @@ export const aboutMeTimeline: TimelineEntry[] = [
           points={[
             'Next.js',
             'React',
+            'TypeScript',
             'TailwindCSS',
             'ShadCN',
             'React Query',
