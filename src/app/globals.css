@@ -86,11 +86,11 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
-  --sh-identifier: #b1cdee;
+  --sh-identifier: #f7c81c;
   --sh-keyword: #f47067;
   --sh-string: #00a99a;
   --sh-class: #8d85ff;
-  --sh-property: #4e8fdf;
+  --sh-property: #e1e5eb;
   --sh-entity: #6eafad;
   --sh-jsxliterals: #bf7db6;
   --sh-sign: #8996a3;
@@ -133,9 +133,16 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 
   --sh-class: #4c97f8;
-  --sh-identifier: white;
+  --sh-identifier: rgb(243, 216, 12);
   --sh-keyword: #f47067;
   --sh-string: #0fa295;
+  --sh-property: #2c6dcd;
+  --sh-class: #8d85ff;
+  --sh-property: #e1e5eb;
+  --sh-entity: #ffb66f;
+  --sh-jsxliterals: #bf7db6;
+  --sh-sign: #8996a3;
+  --sh-comment: #a19595;
 }
 
 @layer base {
@@ -171,7 +178,7 @@
   }
 
   ul li {
-    @apply after:bg-primary-blue relative ml-4 list-none leading-5 after:absolute after:top-[12px] after:-left-5 after:h-[2px] after:w-2;
+    @apply after:bg-primary-blue relative ml-4 list-none leading-7 after:absolute after:top-[12px] after:-left-5 after:h-[2px] after:w-2;
   }
 
   .title {
