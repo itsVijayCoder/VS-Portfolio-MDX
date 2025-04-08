@@ -1,5 +1,5 @@
-import { getAllContent } from '@/lib/content';
 import DynamicContentPage from '@/components/common-ui/dynamic-content';
+import { getAllContent } from '@/lib/content';
 
 type PageProps = {
   params: Promise<{ slug: string }>;

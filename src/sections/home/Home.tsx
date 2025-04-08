@@ -1,10 +1,10 @@
 import React from 'react';
 // import Intro from '@/sections/home/Intro';
-import RecentContents from '@/components/common-ui/recent-content';
 import Container from '@/components/layout/container';
 import RecentProjects from '@/components/projects/recent-projects';
 import { HeroParallax } from '@/components/ui/hero-parallax';
 import { HERO_PRODUCTS } from '@/data/hero-parallax-data';
+import RecentContents from '@/components/common-ui/recent-content';
 
 const Home = async () => {
   return (

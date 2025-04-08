@@ -2,10 +2,11 @@
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote';
 // import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc';
 import { JSX } from 'react';
-import { Callout } from './callout';
-import { MdxCard } from './mdx-card';
+import { Callout } from '@/components/callout';
+import { MdxCard } from '@/components/mdx-card';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import MdxAccordion from '@/components/mdx-accordion';
 
 export default function MDXContent(
   props: JSX.IntrinsicAttributes & MDXRemoteProps
@@ -28,6 +29,7 @@ const components = {
   Image,
   Callout,
   Card: MdxCard,
+  Accordion: MdxAccordion,
   h1: ({ className, ...props }: ComponentProps<HTMLHeadingElement>) => (
     <h1
       className={cn(
@@ -155,7 +157,7 @@ const components = {
   pre: ({ className, ...props }: ComponentProps<HTMLPreElement>) => (
     <pre
       className={cn(
-        'mt-6 mb-4 overflow-x-auto rounded-lg border bg-black p-0',
+        'm-0 overflow-x-auto rounded-lg border bg-black p-0',
         className
       )}
       {...props}

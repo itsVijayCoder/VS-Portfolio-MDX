@@ -1,23 +1,23 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { X } from 'lucide-react'
-import ContentCard, { ContentCardProps } from './content-card'
+import { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { X } from 'lucide-react';
+import ContentCard, { ContentCardProps } from './content-card';
 
 export default function ContentWithSearch({
   contents,
   path
 }: ContentCardProps) {
-  const [query, setQuery] = useState('')
-  const filtered = contents.filter(post =>
+  const [query, setQuery] = useState('');
+  const filtered = contents.filter((post) =>
     post.title?.toLowerCase().includes(query.toLowerCase())
-  )
+  );
 
-  const isFiltered = query.length > 0
+  const isFiltered = query.length > 0;
   function resetFilter() {
-    setQuery('')
+    setQuery('');
   }
 
   return (
@@ -28,7 +28,7 @@ export default function ContentWithSearch({
           placeholder='Search content...'
           className='h-9 w-full sm:w-1/2'
           value={query}
-          onChange={e => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
         />
         {isFiltered && (
           <Button
@@ -45,5 +45,5 @@ export default function ContentWithSearch({
 
       <ContentCard contents={filtered} path={path} />
     </div>
-  )
+  );
 }

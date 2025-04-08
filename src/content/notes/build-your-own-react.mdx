@@ -78,24 +78,22 @@ render(reactElement, containerDOMElement);
 </html>
 ```
 
-Solution Code
-
-```jsx
+<Accordion header="Solution Code" >
+  ```jsx
 function render(reactElement, containerDOMElement) {
   // 1. create a DOM element
   const domElement = document.createElement(reactElement.type);
 
-  // 2. update properties
-  domElement.innerText = reactElement.children;
-  for (const key in reactElement.props) {
-    const value = reactElement.props[key];
-    domElement.setAttribute(key, value);
-  }
+// 2. update properties domElement.innerText = reactElement.children; for (const
+key in reactElement.props) { const value = reactElement.props[key];
+domElement.setAttribute(key, value); }
 
-  // 3. put it in the container
-  containerDOMElement.appendChild(domElement);
-}
+// 3. put it in the container containerDOMElement.appendChild(domElement); }
+
 ```
+</Accordion>
+
+
 
 ## Productive failure
 
@@ -142,3 +140,4 @@ a [2019 scientific article](https://www.nature.com/articles/s41539-019-0040-6):
 [**Understanding JSX**](https://www.notion.so/Understanding-JSX-e1855a8dc2814b44bce1538512c8e158?pvs=21)
 
 ---
+```

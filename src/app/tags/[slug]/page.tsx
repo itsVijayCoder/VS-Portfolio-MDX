@@ -25,7 +25,6 @@ const TagPage = async ({ params }: PageProps) => {
   const content = await getAllContent('notes');
 
   const tagContent = content.filter((item) => item.tags?.includes(slug));
-  console.log('tagContent', tagContent);
 
   if (!slug) {
     return null;

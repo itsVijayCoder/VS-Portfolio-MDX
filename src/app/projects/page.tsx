@@ -1,4 +1,4 @@
-// import ContentWithSearch from '@/components/common-ui/content-with-search'
+// import ContentWithSearch from '@/components/content-with-search'
 import Container from '@/components/layout/container';
 import Projects from '@/components/projects/projects';
 import { getAllContent } from '@/lib/content';
