@@ -102,15 +102,41 @@ yarn create next-app
 
 ## Next.js vs React
 
+<Callout>
 While React is a library, Next.js is a framework that builds on top of React:
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>React</th>
+      <th>Next.js</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rendering</td>
+      <td>Client-side</td>
+      <td>SSR, SSG, CSR</td>
+    </tr>
+    <tr>
+      <td>Routing</td>
+      <td>React Router</td>
+      <td>File-based routing</td>
+    </tr>
+    <tr>
+      <td>API Routes</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Image Optimization</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
 
-| Feature        | React | Next.js |
-| -------------- | ----- | ------- |
-| SSR            | ❌    | ✅      |
-| SSG            | ❌    | ✅      |
-| File Routing   | ❌    | ✅      |
-| API Routes     | ❌    | ✅      |
-| Image Optimize | ❌    | ✅      |
+</Callout>
 
 ## Next.js Ecosystem
 
@@ -124,6 +150,7 @@ Popular tools that work well with Next.js:
 
 ## When to Use Next.js?
 
+<Card>
 Consider Next.js when you need:
 
 - SEO-friendly websites (with SSR/SSG)
@@ -131,6 +158,8 @@ Consider Next.js when you need:
 - API routes alongside frontend
 - Optimized production builds
 - Best-in-class developer experience
+
+</Card>
 
 ## Next Steps
 
@@ -143,3 +172,5 @@ Continue your Next.js journey:
 
 **Ready to build with Next.js?** Start with the
 [Official Next.js Documentation](https://nextjs.org/docs)
+
+---

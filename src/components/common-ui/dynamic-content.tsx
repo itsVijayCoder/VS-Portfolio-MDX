@@ -7,6 +7,12 @@ import MDXContent from '@/components/mdx-content';
 import { getContentBySlug } from '@/lib/content';
 import Container from '@/components/layout/container';
 import { PathDirectory } from '@/types/types';
+import { serialize } from 'next-mdx-remote/serialize';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeHighlight from 'rehype-highlight';
+// import 'highlight.js/styles/github-dark.css';
+import 'highlight.js/styles/atom-one-dark.css';
 
 type DynamicContentPageProps = {
   path: PathDirectory;
@@ -20,6 +26,17 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
   }
 
   const { metadata, content } = contents;
+
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        rehypeHighlight
+      ]
+    }
+  });
+
   const { title, author, date, image, description } = metadata;
   return (
     <section className='py-10 md:py-16'>
@@ -60,7 +77,7 @@ const DynamicContentPage = async ({ path, slug }: DynamicContentPageProps) => {
         </header>
 
         <article className='mdx-content-style'>
-          <MDXContent source={content} />
+          <MDXContent {...mdxSource} />
         </article>
 
         {/* <footer className='mt-8'>

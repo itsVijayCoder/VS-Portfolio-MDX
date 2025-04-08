@@ -34,7 +34,7 @@ export default Navbar;
 
 const Navigation = () => {
   const pathName = usePathname();
-  console.log(pathName);
+
   return (
     <>
       <ul className='flex flex-col items-center gap-6 sm:flex-row sm:gap-14'>

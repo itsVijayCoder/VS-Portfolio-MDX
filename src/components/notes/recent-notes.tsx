@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import NotesCard from './notes-card'
-import { getContent } from '@/lib/content'
+import Link from 'next/link';
+import NotesCard from './notes-card';
+import { getAllContent } from '@/lib/content';
 
 export default async function RecentNotes() {
-  const allNotes = await getContent('notes', 2)
+  const allNotes = await getAllContent('notes', 2);
 
   return (
     <section className='pb-24'>
@@ -19,5 +19,5 @@ export default async function RecentNotes() {
         </Link>
       </div>
     </section>
-  )
+  );
 }

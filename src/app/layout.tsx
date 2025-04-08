@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { calistoga, inter, playfair, poppins } from '@/utils/fonts';
 import Providers from '@/components/Providers';
 import Container from '@/components/layout/container';
+// import GradientBackground from '@/components/common-ui/gradient-background';
 
 export const metadata: Metadata = {
   title: 'VS Portfolio',
@@ -30,6 +31,7 @@ export default function RootLayout({
           calistoga.variable
         )}
       >
+        {/* <GradientBackground /> */}
         <Providers>
           <Header />
           <main className='mt-16 grow scroll-smooth'>

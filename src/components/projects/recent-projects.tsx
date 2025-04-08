@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import Projects from './projects';
 import { RecentContentsProps } from '@/types/types';
-import { getContent } from '@/lib/content';
+import { getAllContent } from '@/lib/content';
 
 export default async function RecentProjects({
   limit,
   path
 }: RecentContentsProps) {
-  const projects = await getContent(path, limit ? limit : 0);
+  const projects = await getAllContent(path, limit ? limit : 0);
   return (
     <section className='pb-4'>
       <div>

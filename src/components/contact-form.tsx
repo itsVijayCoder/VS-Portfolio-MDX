@@ -33,7 +33,7 @@ export default function ContactForm() {
 
     if (result?.error) {
       toast.error('An error occurred! Please try again.');
-      console.log('Mail Send Error:', result.error);
+      // console.log('Mail Send Error:', result.error);
       return;
     }
 

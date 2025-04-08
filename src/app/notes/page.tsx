@@ -1,9 +1,9 @@
-import ContentWithSearch from '@/components/common-ui/content-with-search'
-import Container from '@/components/layout/container'
-import { getContent } from '@/lib/content'
+import ContentWithSearch from '@/components/common-ui/content-with-search';
+import Container from '@/components/layout/container';
+import { getAllContent } from '@/lib/content';
 
 const NotesPage = async () => {
-  const allNotes = await getContent('notes')
+  const allNotes = await getAllContent('notes');
   return (
     <>
       {/* <section className='py-10'> */}
@@ -17,7 +17,7 @@ const NotesPage = async () => {
       {/* </div> */}
       {/* </section> */}
     </>
-  )
-}
+  );
+};
 
-export default NotesPage
+export default NotesPage;

@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import ContentCard from './content-card';
-import { getContent } from '@/lib/content';
+import { getAllContent } from '@/lib/content';
 import { RecentContentsProps } from '@/types/types';
 
 export default async function RecentContents({
   limit,
   path
 }: RecentContentsProps) {
-  const contents = await getContent(path, limit ? limit : 0);
+  const contents = await getAllContent(path, limit ? limit : 0);
   return (
     <section className='pb-4'>
       <div>
