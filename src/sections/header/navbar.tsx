@@ -72,11 +72,18 @@ const DesktopView = () => {
 
 const MobileView = () => {
   return (
-    <div className='sm:hidden'>
+    <div className='flex space-x-3 sm:hidden'>
+      <div className=''>
+        <ThemeToggle />
+      </div>
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant='outline'>
-            <HamburgerMenuIcon className='size-4' />
+          <Button
+            variant='outline'
+            size='icon'
+            className='cursor-pointer transition-all duration-300'
+          >
+            <HamburgerMenuIcon className='size-5' />
           </Button>
         </SheetTrigger>
 
