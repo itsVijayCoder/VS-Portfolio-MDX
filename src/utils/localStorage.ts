@@ -1,26 +1,28 @@
+const isBrowser = typeof window !== 'undefined';
+
 export const setLocalStorage = (key: string, value: string) => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return;
   }
 
   window.localStorage.setItem(key, value);
 };
 export const getLocalStorage = (key: string) => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return;
   }
 
   return window.localStorage.getItem(key);
 };
 export const removeLocalStorage = (key: string) => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return;
   }
 
   window.localStorage.removeItem(key);
 };
 export const clearLocalStorage = () => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return;
   }
 
@@ -37,7 +39,7 @@ export const setUserData = (userData: {
   role: string;
   team: { name: string };
 }) => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return;
   }
 
@@ -47,19 +49,19 @@ export const setUserData = (userData: {
 };
 
 export const getUserData = () => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return null;
   }
 
   return {
     name: getLocalStorage(USER_NAME_KEY),
     teamName: getLocalStorage(TEAM_NAME_KEY),
-    role: getLocalStorage(USER_ROLE_KEY),
+    role: getLocalStorage(USER_ROLE_KEY)
   };
 };
 
 export const clearUserData = () => {
-  if (typeof window === 'undefined') {
+  if (!isBrowser) {
     return;
   }
 
